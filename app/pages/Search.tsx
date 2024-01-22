@@ -22,6 +22,12 @@ const SearchPage: React.FC = () => {
   const [formData, setFormData] = useState({ fullName: '', fiscalCode: '', vatNumber: '' });
 
   const handleSearch = (formData: { fullName: string; fiscalCode: string; vatNumber: string }) => {
+    if (!formData.fullName && !formData.fiscalCode && !formData.vatNumber) {
+      alert("Per favore, compila almeno uno dei campi di ricerca.");
+      return;
+    }
+  
+   
     const filteredResults = rawData.filter((item) => {
       return (
         (formData.fullName && (item as unknown as {
