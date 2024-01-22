@@ -1,0 +1,50 @@
+[
+    {
+      "fullname": "Mario Rossi S.p.A.",
+      "address": "Via Roma, 123, 00100 Roma",
+      "fiscalCode": "MRARSS12345L123P",
+      "vatNumber": "01234567890",
+      "pecAddress": "info@mario-rossi-spa.it",
+      "uniqueCode": "M5UXCR1",
+      "startDate": "2001-04-15",
+      "endDate": null
+    },
+    {
+      "fullname": "Luigi Bianchi",
+      "address": "Corso Venezia, 56, 20121 Milano",
+      "fiscalCode": "LGBNC4567H567G",
+      "vatNumber": "09876543210",
+      "pecAddress": "luigi.bianchi@example.com",
+      "uniqueCode": "B2LU34V",
+      "startDate": "2015-09-23",
+      "endDate": "2022-12-31"
+    },
+    {
+      "fullname": "Verde S.r.l.",
+      "address": "Piazza del Duomo, 1, 50123 Firenze",
+      "fiscalCode": null,
+      "vatNumber": "12312312312",
+      "pecAddress": null,
+      "uniqueCode": "VRD1234",
+      "startDate": "2010-06-01",
+      "endDate": null
+    },
+    {
+        "fullname": "Piero Sabino",
+        "address": "Via Ninuccio Napolitano,2",
+        "fiscalCode": "SBNPRI90B151662V",
+        "vatNumber": "07086520728",
+        "pecAddress": "pierosabino@pec.it",
+        "uniqueCode": "USAL8PV",
+        "startDate": "2010-08-11",
+        "endDate": null
+      },
+      {
+        "fullname": "Condominio via Limorti Tua,2",
+        "address": "Via Limorti Tua,2",
+        "fiscalCode": "09930022072",
+        "vatNumber": null,
+        "pecAddress": null
+      }
+  ]
+  
