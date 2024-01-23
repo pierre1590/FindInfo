@@ -27,7 +27,7 @@ interface SearchResultCardProps {
     endDate,
   }) => {
     return (
-      <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 mb-4 transition duration-300 ease-in-out transform hover:scale-105">
+      <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 mb-4 transition duration-300 ease-in-out transform hover:scale-105 mt-8">
         <h3 className="font-bold text-xl mb-2">{fullname}</h3>
         <ul>
           {address && <li><strong>Indirizzo:</strong> {address}</li>}

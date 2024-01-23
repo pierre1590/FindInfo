@@ -20,6 +20,7 @@ interface SearchResult {
 const SearchPage: React.FC = () => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [formData, setFormData] = useState({ fullName: '', fiscalCode: '', vatNumber: '' });
+  const [isSearchDone,setIsSearchDone] = useState(false)
 
   const handleSearch = (formData: { fullName: string; fiscalCode: string; vatNumber: string }) => {
     if (!formData.fullName && !formData.fiscalCode && !formData.vatNumber) {
@@ -38,18 +39,30 @@ const SearchPage: React.FC = () => {
       );
     }).sort((a,b)=> a.fullname.localeCompare(b.fullname));
     setSearchResults(filteredResults as unknown as SearchResult[]);
+
+
+    if(filteredResults.length === 0){
+      setIsSearchDone(true)
+    } else {
+      setSearchResults(filteredResults as unknown as SearchResult[]);
+      setIsSearchDone(false);
+    }
   };
 
   const handleReset = () => {
     setSearchResults([]);
     setFormData({ fullName: '', fiscalCode: '', vatNumber: '' });
+    setIsSearchDone(false);
   };
 
   return (
     <div className="container mx-auto px-4">
       <h1 className="text-2xl font-bold my-4">Ricerca</h1>
       <SearchForm formData={formData} setFormData={setFormData} onSearch={handleSearch} onReset={handleReset} />
-      <div>
+      <div className="flex flex-col items-center justify-center mt-4">
+      {isSearchDone && searchResults.length === 0 && (
+        <p className='text-center mt-12'>Nessun risultato trovato per i criteri di ricerca inseriti.</p>
+      )}
         {searchResults.map((result, index) => (
           <SearchResultCard fullname={''} key={index} {...result} />
         ))}

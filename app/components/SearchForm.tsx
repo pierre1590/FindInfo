@@ -13,9 +13,14 @@ interface SearchFormProps {
   setFormData: React.Dispatch<React.SetStateAction<SearchFormData>>;
 }
 
+const formatInputValue = (value:string) => {
+  return value.trim();
+}
+
 const SearchForm: React.FC<SearchFormProps> = ({ formData, onSearch, onReset, setFormData }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    const {name,value} = event.target;
+    setFormData({ ...formData, [name]:formatInputValue(value) });
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
